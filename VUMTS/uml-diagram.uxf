@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>261</y>
+      <w>423</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ModelVirtualUltibot
+--
+- distance: int = 0
+--
++ MeasureDistance(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>378</y>
+      <w>423</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+- model: IModelUltibot
+- form: IView
+- isUltrasonicCycling: bool = false
+--
++ Controller(form: IView, model: IModelUltibot)
++ HandleButtonUltrasonicStart(sender: object?, e: EventArgs): void
++ StartUltrasonicCycle(): Task
++ StopUltrasonicCycle(): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>378</y>
+      <w>288</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>Program
+--
+
+--
+_+ Main(args: string[]): void_
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>324</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>504</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>423</y>
+      <w>117</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>279</y>
+      <w>261</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0;270.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>504</y>
+      <w>261</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;270.0;130.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>261</y>
+      <w>324</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IModelUltibot
+--
+
+--
++ MeasureDistance(): int
++ OpenPort(portName: string): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>288</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>558</y>
+      <w>324</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IForm (View)
+--
+
+--
++ get_ButtonStartUltrasonic_Click(): event EventHandler
++ DisplayDistance(newDistance: int): void
++ SwitchButtonStartUltrasonic(isActive: bool): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>612</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>558</y>
+      <w>423</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>FormMain
+--
+- labelDistance: Label
+- textBoxDistance: TextBox
+- buttonUltrasonic: Button
+--
++ FormMain()
++ get_ButtonStartUltrasonic_Click(): event EventHandler
++ DisplayDistance(newDistance: int): void
++ SwitchButtonStartUltrasonic(isActive: bool): void
+- InitializeComponent(): void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
